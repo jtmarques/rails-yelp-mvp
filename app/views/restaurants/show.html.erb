@@ -1,0 +1,31 @@
+<div class="container mt-5">
+<div><h1><%= @restaurant.name %></h1>
+<p> 🏠 | <%=@restaurant.address %></p>
+<p> ⛳️ | <%=@restaurant.category %></p>
+<p> ☎️ | <%=@restaurant.phone_number %></p>
+
+</div>
+<div class="btn btn-light">
+  <%= link_to "Back to restaurants", restaurants_path %>
+</div>
+<br>
+
+<h2>💬 Reviews:</h2>
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item">
+    <h4>Rating:</h4>
+
+    <% review.rating.times do %>
+    ⭐️
+    <% end %>
+    <br>
+    <%= review.content %>
+    </li>
+  <% end %>
+</ul>
+<br>
+<div class="btn btn-warning">
+  <%= link_to "Add a review", restaurants_path %>
+</div>
+</div>

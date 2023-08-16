@@ -1,0 +1,7 @@
+<h1>🧑🏼‍🍳 - Restaurants - 🧑🏾‍🍳</h1>
+
+<div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+  <% @restaurants.each do |restaurant| %>
+    <p><%= link_to restaurant.name, restaurant %> ></p>
+  <% end %>
+</div>
